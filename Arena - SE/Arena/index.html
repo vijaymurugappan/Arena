@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+		
+		<title>Mobile Friendly Page</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,600,800' type='text/css' media='all'/>
+
+		<!-- JavaScript -->
+		<script type="text/javascript" src="javascript/jQuery.all.js"></script>
+		<script type="text/javascript" src="javascript/dropDown.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//Run code upload Page load
+				enableDropDownForIds('#userInfo, #createAccount');
+			});
+		</script>
+	</head>
+	<body>
+		<div id="titleBar" class="blue-gradiant">My Portfolio</div>
+		<img src="images/profile_pic.jpg" id="profile_pic" alt="Profile Picture"/>
+		<div id="name" class="blue-gradiant">EXPERIENCES</div>
+		<div class="experienceDetails">
+			<span class="company">ZCODIA TECHNOLOGIES PVT LTD</span>
+			<span class="address">AADAMBAKKAM, CHENNAI, INDIA</span>
+			<span class="yearSpan">MARCH 2016 - MARCH 2016</span>
+			<span class="positionTitle">iOS APPLICATION DEVELOPER INTERN </span>
+			<p>FIRST HANDS ON EXPERIENCE IN BOTH OBJECTIVE C AND SWIFT PROGRAMMING.</p>
+		</div>
+        
+        
+        
+        
+		<hr class="width-75">
+		<div class="experienceDetails">
+        
+        <span class="company">NORTHERN ILLINOIS UNVERSITY</span><span class="address">DeKalb, Illinois</span>
+			<span class="yearSpan">FALL 2016 - SPRING 2018</span>
+			<span class="positionTitle">GRADUATE STUDENT</span>
+		  <p>PLANNING TO START MY CAREER AS A MOBILE APPLICATION DEVELOPER.</p>
+		</div>
+        
+        
+        
+		<hr class="width-75">
+		<div class="experienceDetails">
+			<span class="company">ANNA UNIVERSITY</span>
+			<span class="address">GUINDY,CHENNAI,INDIA</span>
+			<span class="yearSpan">AUGUST 2011 - MAY 2015</span>
+			<span class="positionTitle">UNDERGRADUATE STUDENTS</span>
+			<p>ATTAINING MY KNOWLEDGE ON BASICS OF COMPUTER SCIENCE.</p>
+		</div>
+		<div id="footer">
+			Updated by Vijay Murugappan Subbiah(Z1807314) for CSCI 521, Spring 2017 Course.
+	</div>
+	</body>
+</html>
