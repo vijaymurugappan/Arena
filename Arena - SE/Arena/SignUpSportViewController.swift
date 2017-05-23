@@ -36,6 +36,7 @@ let rootref = FIRDatabase.database().reference()
     @IBOutlet weak var badmintonSlider: UISlider!
     @IBOutlet weak var soccerSlider: UISlider!
     @IBOutlet weak var bowlingSlider: UISlider!
+    @IBOutlet weak var registerButtonClicked: UIButton!
     
 //ACTIONS
     @IBAction func registerClicked(_ sender: UIButton) {
@@ -158,6 +159,10 @@ let rootref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setcustomTextField(textfield: timeTextField, placeholdername: "Preferred Time")
+        setcustomTextField(textfield: dayTextField, placeholdername: "Preferred Day")
+        setcustomTextField(textfield: sportTextField, placeholdername: "Favorite Sport")
+        setcustomButton(button: registerButtonClicked)
         badmintonSkill.isHidden = true
         badmintonSlider.isHidden = true
         soccerSkill.isHidden = true
@@ -171,6 +176,19 @@ let rootref = FIRDatabase.database().reference()
         timeTextField.inputView = timePicker // Changing the input view to datapickerview
         timePicker.addTarget(self, action: #selector(self.datePickerChanged(_:)), for: .valueChanged)
     }
+    
+    func setcustomTextField(textfield: UITextField, placeholdername: String) {
+        textfield.backgroundColor = UIColor.clear
+        textfield.layer.borderWidth = 1.0
+        textfield.layer.cornerRadius = 8.0
+        textfield.layer.borderColor = UIColor.white.cgColor
+        textfield.attributedPlaceholder = NSAttributedString(string: placeholdername, attributes: [NSForegroundColorAttributeName: UIColor.white])
+    }
+    
+    func setcustomButton(button: UIButton) {
+        button.layer.cornerRadius = 8.0
+    }
+    
 
 //PICKER VIEW DELEGATE AND DATA SOURCE METHODS
     

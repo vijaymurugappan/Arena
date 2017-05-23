@@ -43,6 +43,7 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var selectedSexTextField: UITextField!
     @IBOutlet weak var searchGameSwitch: UISwitch!
     @IBOutlet weak var searchInformationSwitch: UISwitch!
+    @IBOutlet weak var findButtonClicked: UIButton!
     
     //ACTIONS
     //sliders
@@ -140,6 +141,10 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setcustomTextField(textfield: selectedSportTextField, placeholdername: "Sport Name")
+        setcustomTextField(textfield: selectedAgeTextField, placeholdername: "Age")
+        setcustomTextField(textfield: selectedSexTextField, placeholdername: "Sex (M/F)")
+        setcustomButton(button: findButtonClicked)
         let t = Int(skillSlider.value)
         skillLabel.text = String(t)
         searchGameSwitch.isOn = true
@@ -147,6 +152,18 @@ class FindViewController: UIViewController,UITextFieldDelegate {
         selectedAgeTextField.isEnabled = false
         selectedSexTextField.isEnabled = false
         fetchKey() // retreiving the keys of the values stored in the snapshot database before the view loads
+    }
+    
+    func setcustomTextField(textfield: UITextField, placeholdername: String) {
+        textfield.backgroundColor = UIColor.clear
+        textfield.layer.borderWidth = 1.0
+        textfield.layer.cornerRadius = 8.0
+        textfield.layer.borderColor = UIColor.white.cgColor
+        textfield.attributedPlaceholder = NSAttributedString(string: placeholdername, attributes: [NSForegroundColorAttributeName: UIColor.white])
+    }
+    
+    func setcustomButton(button: UIButton) {
+        button.layer.cornerRadius = 8.0
     }
     
     func fetchKey() {

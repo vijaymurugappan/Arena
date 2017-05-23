@@ -34,6 +34,8 @@
 		C4481ACA1EAE84AD00AA4432 /* SignUpSportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4481AC81EAE84AD00AA4432 /* SignUpSportViewController.swift */; };
 		C4BABEB31ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */; };
 		C4BABEB71ED228FF00DD0D68 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4BABEB61ED228FF00DD0D68 /* 1.jpg */; };
+		C4EE16311ED4D67F0076CF8B /* iphone-phone-call-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */; };
+		C4EE16351ED4E1880076CF8B /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		C4481AC81EAE84AD00AA4432 /* SignUpSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSportViewController.swift; sourceTree = "<group>"; };
 		C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg"; sourceTree = "<group>"; };
 		C4BABEB61ED228FF00DD0D68 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-phone-call-icon.png"; sourceTree = "<group>"; };
+		C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		DE32E17552A5281D977C575E /* Pods-Arena.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arena.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arena/Pods-Arena.debug.xcconfig"; sourceTree = "<group>"; };
 		F187D4798CE057E00B073589 /* Pods-ArenaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArenaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArenaUITests/Pods-ArenaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +169,7 @@
 				C44484C71EB020770046F142 /* FindViewController.swift */,
 				C44484C91EB020990046F142 /* OpponentsTableViewController.swift */,
 				C44484D31EB0B8C10046F142 /* AboutViewController.swift */,
+				C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 		C44484DE1EB0B9500046F142 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */,
 				C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */,
 				C44484CF1EB0B39E0046F142 /* ios7_phone_icon.png */,
 				C4BABEB61ED228FF00DD0D68 /* 1.jpg */,
@@ -373,6 +379,7 @@
 				C44484D01EB0B39E0046F142 /* ios7_phone_icon.png in Resources */,
 				C44484D21EB0B4060046F142 /* 2.png in Resources */,
 				C44484D81EB0B8E50046F142 /* index.html in Resources */,
+				C4EE16311ED4D67F0076CF8B /* iphone-phone-call-icon.png in Resources */,
 				C43EAA4D1EAEEB83004AD37E /* arena.gif in Resources */,
 				C44484DA1EB0B8E50046F142 /* css in Resources */,
 				C44484CE1EB0B32D0046F142 /* featured-content-messages-icon_2x.png in Resources */,
@@ -543,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4481A9A1EAE6EE900AA4432 /* HomeViewController.swift in Sources */,
+				C4EE16351ED4E1880076CF8B /* AuthorViewController.swift in Sources */,
 				C4481A981EAE6EE900AA4432 /* AppDelegate.swift in Sources */,
 				C44484CA1EB020990046F142 /* OpponentsTableViewController.swift in Sources */,
 				C44484D41EB0B8C10046F142 /* AboutViewController.swift in Sources */,

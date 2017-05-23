@@ -21,11 +21,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginbuttonClicked: UIButton!
     @IBOutlet weak var signButtonClicked: UIButton!
+    @IBOutlet weak var domainLabel: UILabel!
     
     //ACTION
     @IBAction func loginClicked(_ sender: UIButton) {
         //Block which authenticates the user with the provided email and password if exists in the google cloud database
-        FIRAuth.auth()?.signIn(withEmail: loginTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+        let loginID = loginTextField.text! + domainLabel.text!
+        FIRAuth.auth()?.signIn(withEmail: loginID, password: passwordTextField.text!, completion: { (user, error) in
             if error == nil {
                 self.loginbuttonClicked.setTitle("Logged In", for: .normal)
                 self.uid = (user?.uid)! //Unique user ID
@@ -33,8 +35,10 @@ class HomeViewController: UIViewController {
             }
             else
             {
-                print("Incorrect Login")
-                print(error ?? 0)
+                let alertVC = UIAlertController(title: "Incorrect Login",message: "Please Check Your Credentials",preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok",style:.default,handler: nil)
+                alertVC.addAction(okAction)
+                self.present(alertVC,animated: true,completion: nil)
             }
         })
     }
@@ -42,21 +46,21 @@ class HomeViewController: UIViewController {
     //Places the cursor at login text field after loading
     override func viewDidLoad() {
         super.viewDidLoad()
-        customUI()
-        loginTextField.becomeFirstResponder()
+        setcustomTextField(textfield: loginTextField, placeholdername: "Login ID")
+        setcustomTextField(textfield: passwordTextField, placeholdername: "Password")
+        setcustomButton(button: loginbuttonClicked)
+        setcustomButton(button: signButtonClicked)
     }
     
-    func customUI() {
-        loginTextField.layer.borderWidth = 1.0
-        loginTextField.layer.cornerRadius = 8.0
-        loginTextField.layer.borderColor = UIColor.white.cgColor
-        loginTextField.attributedPlaceholder = NSAttributedString(string: "Login ID", attributes: [NSForegroundColorAttributeName: UIColor.white])
-        passwordTextField.layer.borderWidth = 1.0
-        passwordTextField.layer.cornerRadius = 8.0
-        passwordTextField.layer.borderColor = UIColor.white.cgColor
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName: UIColor.white])
-        loginbuttonClicked.layer.cornerRadius = 8.0
-        signButtonClicked.layer.cornerRadius = 8.0
+    func setcustomTextField(textfield: UITextField, placeholdername: String) {
+        textfield.layer.borderWidth = 1.0
+        textfield.layer.cornerRadius = 8.0
+        textfield.layer.borderColor = UIColor.white.cgColor
+        textfield.attributedPlaceholder = NSAttributedString(string: placeholdername, attributes: [NSForegroundColorAttributeName: UIColor.white])
+    }
+    
+    func setcustomButton(button: UIButton) {
+        button.layer.cornerRadius = 8.0
     }
     
     //Dismisses keyboard when touched outside
