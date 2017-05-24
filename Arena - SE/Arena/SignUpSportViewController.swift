@@ -16,6 +16,7 @@ let rootref = FIRDatabase.database().reference()
     
 //VARIABLES
     let pickerData = Calendar.current.weekdaySymbols
+    let pickerData2 = ["Badminton","Soccer","Bowling"]
     var name = String()
     var age = String()
     var sex = String()
@@ -24,6 +25,7 @@ let rootref = FIRDatabase.database().reference()
     var password = String()
     var users = [User]() // Handler for the object
     var pickerViews = UIPickerView() // Picker View
+    var pickerViewd = UIPickerView()
     let timePicker = UIDatePicker() // Date Picker
     
 //OUTLETS
@@ -163,6 +165,11 @@ let rootref = FIRDatabase.database().reference()
         setcustomTextField(textfield: dayTextField, placeholdername: "Preferred Day")
         setcustomTextField(textfield: sportTextField, placeholdername: "Favorite Sport")
         setcustomButton(button: registerButtonClicked)
+        registerButtonClicked.isEnabled = false
+        registerButtonClicked.alpha = 0.5
+        timeTextField.addTarget(self, action: #selector(enabledButton), for: .editingChanged)
+        dayTextField.addTarget(self, action: #selector(enabledButton), for: .editingChanged)
+        sportTextField.addTarget(self, action: #selector(enabledButton), for: .editingChanged)
         badmintonSkill.isHidden = true
         badmintonSlider.isHidden = true
         soccerSkill.isHidden = true
@@ -171,10 +178,30 @@ let rootref = FIRDatabase.database().reference()
         bowlingSlider.isHidden = true
         pickerViews.delegate = self
         pickerViews.dataSource = self
+        pickerViewd.dataSource = self
+        pickerViewd.delegate = self
         dayTextField.inputView = pickerViews // Changing the input view to pickerview
+        sportTextField.inputView = pickerViewd
         timePicker.datePickerMode = UIDatePickerMode.time
         timeTextField.inputView = timePicker // Changing the input view to datapickerview
         timePicker.addTarget(self, action: #selector(self.datePickerChanged(_:)), for: .valueChanged)
+    }
+    
+    func enabledButton(_textfield: UITextField) {
+        if(_textfield.text?.characters.count == 1) {
+            if(_textfield.text?.characters.first == " ") {
+                _textfield.text = ""
+                return
+            }
+        }
+        guard(!(timeTextField.text?.isEmpty)! && !(dayTextField.text?.isEmpty)! && !(sportTextField.text?.isEmpty)!)
+            else {
+                registerButtonClicked.isEnabled = false
+                registerButtonClicked.alpha = 0.5
+                return
+        }
+        registerButtonClicked.isEnabled = true
+        registerButtonClicked.alpha = 1.0
     }
     
     func setcustomTextField(textfield: UITextField, placeholdername: String) {
@@ -193,19 +220,33 @@ let rootref = FIRDatabase.database().reference()
 //PICKER VIEW DELEGATE AND DATA SOURCE METHODS
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if(pickerView == pickerViews) {
+        return 1
+        }
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(pickerView == pickerViews) {
         return pickerData.count
+        }
+        return pickerData2.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(pickerView == pickerViews) {
         return pickerData[row]
+        }
+        return pickerData2[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView == pickerViews) {
         dayTextField.text = pickerData[row]
+        }
+        else {
+        sportTextField.text = pickerData2[row]
+        }
     }
     
 }

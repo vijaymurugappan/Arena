@@ -33,9 +33,36 @@ class SignUpBasicViewController: UIViewController,UITextFieldDelegate,UIPickerVi
         setcustomTextField(textfield: usernameTextField, placeholdername: "User Name")
         setcustomTextField(textfield: passwordTextField, placeholdername: "Password")
         setcustomButton(button: saveButtonClicked)
+        nameTextField.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        ageTextField.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        sexTextField.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        contactTextField.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        saveButtonClicked.isEnabled = false
+        saveButtonClicked.alpha = 0.5
         sexTextField.inputView = pickerViews
+        ageTextField.keyboardType = UIKeyboardType.numberPad
+        contactTextField.keyboardType = UIKeyboardType.numberPad
         pickerViews.dataSource = self
         pickerViews.delegate = self
+    }
+    
+    func enableButton(_textfield: UITextField) {
+        if(_textfield.text?.characters.count == 1) {
+            if(_textfield.text?.characters.first == " ") {
+                _textfield.text = ""
+                return
+            }
+        }
+        guard(!(nameTextField.text?.isEmpty)! && !(ageTextField.text?.isEmpty)! && !(sexTextField.text?.isEmpty)! && !(contactTextField.text?.isEmpty)! && !(usernameTextField.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)!)
+        else {
+            saveButtonClicked.isEnabled = false
+            saveButtonClicked.alpha = 0.5
+            return
+        }
+        saveButtonClicked.isEnabled = true
+        saveButtonClicked.alpha = 1.0
     }
     
     func setcustomTextField(textfield: UITextField, placeholdername: String) {
