@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		23C4730B946386944A569D72 /* Pods_Arena.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199B76427D224F223E63BE8 /* Pods_Arena.framework */; };
 		9540DE196646D428F17F6F26 /* Pods_ArenaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C9C9E3B9B64424BF6D4DB5 /* Pods_ArenaTests.framework */; };
+		C413D8031ED627C3005DF69D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413D8021ED627C3005DF69D /* MapViewController.swift */; };
 		C4243D09223BB37A63D8775D /* Pods_ArenaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF980999F2BA030F1E6167 /* Pods_ArenaUITests.framework */; };
 		C43EAA4D1EAEEB83004AD37E /* arena.gif in Resources */ = {isa = PBXBuildFile; fileRef = C43EAA4C1EAEEB83004AD37E /* arena.gif */; };
 		C43EAA4F1EAF03E1004AD37E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EAA4E1EAF03E1004AD37E /* ProfileViewController.swift */; };
 		C43EAA511EAF041C004AD37E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EAA501EAF041C004AD37E /* User.swift */; };
 		C44484C81EB020770046F142 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44484C71EB020770046F142 /* FindViewController.swift */; };
-		C44484CA1EB020990046F142 /* OpponentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44484C91EB020990046F142 /* OpponentsTableViewController.swift */; };
 		C44484CE1EB0B32D0046F142 /* featured-content-messages-icon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C44484CC1EB0B32D0046F142 /* featured-content-messages-icon_2x.png */; };
 		C44484D01EB0B39E0046F142 /* ios7_phone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C44484CF1EB0B39E0046F142 /* ios7_phone_icon.png */; };
 		C44484D21EB0B4060046F142 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = C44484D11EB0B4060046F142 /* 2.png */; };
@@ -63,11 +63,11 @@
 		8187E8CA17B05780D6149B15 /* Pods-ArenaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArenaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArenaTests/Pods-ArenaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86C9C9E3B9B64424BF6D4DB5 /* Pods_ArenaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArenaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9594E974029764391A9E353F /* Pods-ArenaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArenaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArenaTests/Pods-ArenaTests.release.xcconfig"; sourceTree = "<group>"; };
+		C413D8021ED627C3005DF69D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		C43EAA4C1EAEEB83004AD37E /* arena.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = arena.gif; sourceTree = "<group>"; };
 		C43EAA4E1EAF03E1004AD37E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		C43EAA501EAF041C004AD37E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C44484C71EB020770046F142 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
-		C44484C91EB020990046F142 /* OpponentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentsTableViewController.swift; sourceTree = "<group>"; };
 		C44484CC1EB0B32D0046F142 /* featured-content-messages-icon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "featured-content-messages-icon_2x.png"; sourceTree = "<group>"; };
 		C44484CF1EB0B39E0046F142 /* ios7_phone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios7_phone_icon.png; sourceTree = "<group>"; };
 		C44484D11EB0B4060046F142 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -167,9 +167,9 @@
 				C4481AC81EAE84AD00AA4432 /* SignUpSportViewController.swift */,
 				C43EAA4E1EAF03E1004AD37E /* ProfileViewController.swift */,
 				C44484C71EB020770046F142 /* FindViewController.swift */,
-				C44484C91EB020990046F142 /* OpponentsTableViewController.swift */,
 				C44484D31EB0B8C10046F142 /* AboutViewController.swift */,
 				C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */,
+				C413D8021ED627C3005DF69D /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -549,10 +549,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C413D8031ED627C3005DF69D /* MapViewController.swift in Sources */,
 				C4481A9A1EAE6EE900AA4432 /* HomeViewController.swift in Sources */,
 				C4EE16351ED4E1880076CF8B /* AuthorViewController.swift in Sources */,
 				C4481A981EAE6EE900AA4432 /* AppDelegate.swift in Sources */,
-				C44484CA1EB020990046F142 /* OpponentsTableViewController.swift in Sources */,
 				C44484D41EB0B8C10046F142 /* AboutViewController.swift in Sources */,
 				C43EAA511EAF041C004AD37E /* User.swift in Sources */,
 				C43EAA4F1EAF03E1004AD37E /* ProfileViewController.swift in Sources */,

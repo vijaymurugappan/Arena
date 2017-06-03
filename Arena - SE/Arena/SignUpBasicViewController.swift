@@ -48,6 +48,28 @@ class SignUpBasicViewController: UIViewController,UITextFieldDelegate,UIPickerVi
         pickerViews.delegate = self
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if(textField == contactTextField)
+        {
+        let charCount = textField.text?.characters.count
+            if(range.length + range.location > charCount!) {
+                return false
+            }
+            let stringLength = charCount! + string.characters.count - range.length
+        return stringLength == 10
+        }
+        if(textField == ageTextField)
+        {
+            let charCount = textField.text?.characters.count
+            if(range.length + range.location > charCount!) {
+                return false
+            }
+            let stringLength = charCount! + string.characters.count - range.length
+            return stringLength == 2
+        }
+        return false
+    }
+    
     func enableButton(_textfield: UITextField) {
         if(_textfield.text?.characters.count == 1) {
             if(_textfield.text?.characters.first == " ") {

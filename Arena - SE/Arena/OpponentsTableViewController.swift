@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 class OpponentsTableViewController: UITableViewController {
-
+    
     //Object Handler
     let users = [User]()
     
@@ -22,14 +22,16 @@ class OpponentsTableViewController: UITableViewController {
     //caling prepare key during load
     override func viewDidLoad() {
         super.viewDidLoad()
+        //definesPresentationContext = true
         prepareKey()
-}
+    }
     //This function extracts the keys and appends it into a key array
     func prepareKey() {
         let ref = FIRDatabase.database().reference()
         ref.observe(.value, with: {(snapshot) in
             if let result = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 let counter = result.count
+                //print(result[1].key)
                 for i in 0...(counter-1) {
                     self.keyArray.append(result[i].key)
                 }
@@ -41,7 +43,7 @@ class OpponentsTableViewController: UITableViewController {
     func fetchID() {
         let ref = FIRDatabase.database().reference()
         for key in keyArray {
-        let chldref = ref.child(key)
+            let chldref = ref.child(key)
             chldref.observe(.value, with: {(snappy) in
                 if let res = snappy.children.allObjects as? [FIRDataSnapshot] {
                     for name in self.nameArray {
@@ -60,15 +62,16 @@ class OpponentsTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nameArray.count //count of the number of names
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-//        let use:User = users[indexPath.item]
+        //        let use:User = users[indexPath.item]
+        print(nameArray)
         cell.textLabel?.text = nameArray[indexPath.item] // opponent names
         return cell
     }
@@ -84,5 +87,5 @@ class OpponentsTableViewController: UITableViewController {
         }
     }
     
-
+    
 }

@@ -76,7 +76,10 @@ let rootref = FIRDatabase.database().reference()
                 item.id(uid: (user?.uid)!)
             }
             else {
-                print(error ?? 0)
+                let alertVC = UIAlertController(title: "Password Error",message: error?.localizedDescription,preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok",style:.default,handler: nil)
+                alertVC.addAction(okAction)
+                self.present(alertVC,animated: true,completion: nil)
             }
         })
         }
@@ -165,11 +168,11 @@ let rootref = FIRDatabase.database().reference()
         setcustomTextField(textfield: dayTextField, placeholdername: "Preferred Day")
         setcustomTextField(textfield: sportTextField, placeholdername: "Favorite Sport")
         setcustomButton(button: registerButtonClicked)
+        timeTextField.addTarget(self, action: #selector(enabledButton), for: .allEditingEvents)
+        dayTextField.addTarget(self, action: #selector(enabledButton), for: .allEditingEvents)
+        sportTextField.addTarget(self, action: #selector(enabledButton), for: .allEditingEvents)
         registerButtonClicked.isEnabled = false
         registerButtonClicked.alpha = 0.5
-        timeTextField.addTarget(self, action: #selector(enabledButton), for: .editingChanged)
-        dayTextField.addTarget(self, action: #selector(enabledButton), for: .editingChanged)
-        sportTextField.addTarget(self, action: #selector(enabledButton), for: .editingChanged)
         badmintonSkill.isHidden = true
         badmintonSlider.isHidden = true
         soccerSkill.isHidden = true

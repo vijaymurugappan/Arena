@@ -21,7 +21,7 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     var strbad = String()
     var strbow = String()
     var strsoc = String()
-    var name = String()
+    var chosenUID = String()
     var sex = String()
     var sport = String()
     var uid = String()
@@ -33,7 +33,9 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     var bowskillArray = [Int]()
     var socskillArray = [Int]()
     var sportArray = [String]()
-    var nameArray = [String]()
+    var chosenUIDArray = [String]()
+    var chldref = FIRDatabaseReference()
+    var count = Int()
     
     //OUTLETS
     @IBOutlet weak var selectedSportTextField: UITextField!
@@ -96,35 +98,46 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     @IBAction func searchSelected(_ sender: UIButton) {
         if(searchGameSwitch.isOn) { // if switch is on
             for str in sportArray {
-                print(str)
+                //print(str)
                 if(str == "Badminton") { //if badminton
                     for skl in badskillArray {
-                        print(skl)
+                        //print(skl)
                 if(selectedSportTextField.text == str && Int(skillLabel.text!)! == skl) { //checking whether there is a match with the database value
+                    for uidd in uidArray {
                     temp = 1
-                    transferData(str: str,skl: skl,temp: temp) //if yes transfer it to a function
+                    transferData(str: str,skl: skl,temp: temp,uidd: uidd) //if yes transfer it to a function
+                    print("exit transfer")
+                    }
                     break
                         }
                     }
+                 //   self.performSegue(withIdentifier: "opponent", sender: self)
+                    print("exit loop")
                     break
                 }
                 if(str == "Soccer") { //if soccer
                     for skl in socskillArray {
                         if(selectedSportTextField.text == str && Int(skillLabel.text!)! == skl) {
+                            for uidd in uidArray {
                             temp = 2
-                            transferData(str: str,skl: skl,temp: temp)
+                            transferData(str: str,skl: skl,temp: temp,uidd: uidd)
+                        }
                             break
                         }
                     }
+                    break
                 }
                 if(str == "Bowling") { //if bowling
                     for skl in bowskillArray {
                         if(selectedSportTextField.text == str && Int(skillLabel.text!)! == skl) {
+                            for uidd in uidArray {
                             temp = 3
-                            transferData(str: str,skl: skl,temp: temp)
+                            transferData(str: str,skl: skl,temp: temp,uidd: uidd)
+                            }
                             break
                         }
                     }
+                    break
                 }
             }
         }
@@ -133,10 +146,13 @@ class FindViewController: UIViewController,UITextFieldDelegate {
                         for s in sexArray {
                             if(Int(selectedAgeTextField.text!)! == a && selectedSexTextField.text == s) {
                                 transferData1(str: s, a: a)
+                                break
                             }
                         }
+                        break
                     }
                 }
+        print("exit switch")
     }
     
     override func viewDidLoad() {
@@ -185,25 +201,25 @@ class FindViewController: UIViewController,UITextFieldDelegate {
             let chldref = ref.child(uidd)
         chldref.observe(.value, with: {(FIRDataSnapshot) in //retreiving files from the database
             if let results = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
-                self.strage = results[0].value as! String
+                self.strage = results[1].value as! String
                 self.age = Int(self.strage)!
                 self.ageArray.append(self.age)
-                    self.sex = results[7].value as! String
+                    self.sex = results[8].value as! String
                 self.sexArray.append(self.sex)
-                    self.strbad = results[1].value as! String
+                    self.strbad = results[2].value as! String
                 self.badskill = Int(self.strbad)!
                 self.badskillArray.append(self.badskill)
-                    self.strbow = results[2].value as! String
+                    self.strbow = results[3].value as! String
                 self.bowskill = Int(self.strbow)!
                 self.bowskillArray.append(self.bowskill)
-                    self.strsoc = results[8].value as! String
+                    self.strsoc = results[9].value as! String
                 self.socskill = Int(self.strsoc)!
                 self.socskillArray.append(self.socskill)
-                    self.sport = results[9].value as! String
+                    self.sport = results[10].value as! String
                 self.sportArray.append(self.sport)
-                print(self.sportArray)
-                print(self.ageArray)
-                print(self.sexArray)
+                //print(self.sportArray)
+                //print(self.ageArray)
+                //print(self.sexArray)
             }
         })
         }
@@ -215,18 +231,18 @@ class FindViewController: UIViewController,UITextFieldDelegate {
             let chldref = ref.child(uidd)
         chldref.observe(.value, with: {(FIRDataSnapshot) in
             if let results = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
-                self.pid = results[10].value as! String
+                self.pid = results[11].value as! String
                 if(self.pid == self.uid)
                 {
                     //Do nothing
                 }
                 else {
-                    self.strage = results[0].value as! String
+                    self.strage = results[1].value as! String
                 self.age = Int(self.strage)!
-                    self.sex = results[7].value as! String
+                    self.sex = results[8].value as! String
                     if(self.age == a && self.sex == str) {
-                        self.name = results[3].value as! String
-                        self.nameArray.append(self.name) //append name if matches
+                        self.chosenUID = results[11].value as! String
+                        self.chosenUIDArray.append(self.chosenUID) //append uid if matches
                 }
                 }
                         self.performSegue(withIdentifier: "opponent", sender: self) //navigation
@@ -236,71 +252,73 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     }
     
     //transferred data from the switch 1 while searches based on the skill level of the sport and that sport name specified by the user
-    func transferData(str:String,skl:Int,temp:Int) {
+    func transferData(str:String,skl:Int,temp:Int,uidd:String) {
         let ref = FIRDatabase.database().reference()
-        for uidd in uidArray {
             print("enter array")
-            let chldref = ref.child(uidd)
-        chldref.observe(.value, with: {(FIRDataSnapshot) in
+            self.chldref = ref.child(uidd)
+        chldref.observe(.value, with: {(FIRDataSnapshot)  in
             if let results = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
+                self.count += 1
                 if(temp == 1) { // reference number passed to identify the sport and skill
-                    self.pid = results[10].value as! String
+                    self.pid = results[11].value as! String
                     if(self.pid == self.uid) // not for showing the user's own stats and profile
                     {
                         //Do nothing
                     }
                     else {
-                    self.strbad = results[1].value as! String
+                    self.strbad = results[2].value as! String
                     self.badskill = Int(self.strbad)!
-                    self.sport = results[9].value as! String
-                    print(self.sport)
+                    self.sport = results[10].value as! String
+                    //print(self.sport)
                     if(self.badskill == skl && self.sport == str) {
-                        self.name = results[3].value as! String
-                        print(self.name)
-                self.nameArray.append(self.name)
-                        print(self.nameArray)
+                        self.chosenUID = results[11].value as! String
+                        //print(self.chosenUID)
+                        self.chosenUIDArray.append(self.chosenUID)
+                        print(self.chosenUIDArray)
                     }
                     }
                 }
                 
                 if(temp == 2) {
-                    self.pid = results[10].value as! String
+                    self.pid = results[11].value as! String
                     if(self.pid == self.uid)
                     {
                         //Do nothing
                     }
                     else {
-                    self.strbow = results[2].value as! String
+                    self.strbow = results[3].value as! String
                     self.bowskill = Int(self.strbow)!
-                    self.sport = results[9].value as! String
+                    self.sport = results[10].value as! String
                     if(self.bowskill == skl && self.sport == str) {
-                        self.name = results[3].value as! String
-                        self.nameArray.append(self.name)
+                        self.chosenUID = results[11].value as! String
+                        self.chosenUIDArray.append(self.chosenUID)
                         }
                     }
                 }
                 if(temp == 3) {
-                    self.pid = results[10].value as! String
+                    self.pid = results[11].value as! String
                     if(self.pid == self.uid)
                     {
                         //Do nothing
                     }
                     else {
-                    self.strsoc = results[8].value as! String
+                    self.strsoc = results[9].value as! String
                     self.socskill = Int(self.strsoc)!
-                    self.sport = results[9].value as! String
+                    self.sport = results[10].value as! String
                     if(self.socskill == skl && self.sport == str) {
-                        self.name = results[3].value as! String
-                        self.nameArray.append(self.name)
+                        self.chosenUID = results[11].value as! String
+                        self.chosenUIDArray.append(self.chosenUID)
                         }
                     }
-                   
+                }
             }
-        }
+            if(self.count == self.uidArray.count) {
+            print("exiting completion handler")
             self.performSegue(withIdentifier: "opponent", sender: self)
+            }
             })
-        }
-        
+            print("exit array")
+        print("exit fn")
     }
     
     //TEXT FIELD DELEGATE METHODS
@@ -318,10 +336,11 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     //passing name array from this view controller to the table view controller to display opponents
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if(segue.identifier == "opponent") {
-                let nvc2 = segue.destination as! UINavigationController
-                let vc2 = nvc2.viewControllers[0] as! OpponentsTableViewController
-                vc2.nameArray = self.nameArray
-                
+//                let nvc2 = segue.destination as! UINavigationController
+//                let vc2 = nvc2.viewControllers[0] as! OpponentsTableViewController
+                let vc2 = segue.destination as! MapViewController
+                //print("FINAL UID ARRAY IS \(chosenUIDArray)")
+                vc2.uidArray = chosenUIDArray
             }
         }
     

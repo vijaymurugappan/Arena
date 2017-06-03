@@ -765,52 +765,39 @@
                         <outlet property="selectedSportTextField" destination="FGa-pB-AJs" id="sqZ-kQ-3Dd"/>
                         <outlet property="skillLabel" destination="47k-6i-HmF" id="MWf-u5-aVD"/>
                         <outlet property="skillSlider" destination="RTj-pg-CIq" id="cCn-4D-zp2"/>
-                        <segue destination="Tjl-85-BtE" kind="show" identifier="opponent" id="2UW-Ej-lAM"/>
+                        <segue destination="owv-b7-Ufr" kind="show" identifier="opponent" id="4zF-ws-5iS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTH-dh-CDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4695" y="851.4084507042254"/>
         </scene>
-        <!--OPPONENTS-->
-        <scene sceneID="dqX-Tx-kjr">
+        <!--Map View Controller-->
+        <scene sceneID="XqS-TI-AHc">
             <objects>
-                <tableViewController id="gr8-K1-VzB" customClass="OpponentsTableViewController" customModule="Arena" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xk5-DA-201">
+                <viewController id="owv-b7-Ufr" customClass="MapViewController" customModule="Arena" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ELY-Fu-1n9"/>
+                        <viewControllerLayoutGuide type="bottom" id="6vJ-Ea-yzW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9kh-7Y-kHA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.95723503828048706" green="0.96228235960006714" blue="0.85161477327346802" alpha="0.68125550180000005" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="separatorColor" red="0.95723503828048706" green="0.96228235960006714" blue="0.85161477327346802" alpha="0.68125550180000005" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" id="pbI-xl-Lad">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pbI-xl-Lad" id="HG3-OA-Z8Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.95723503828048706" green="0.96228235960006714" blue="0.85161477327346802" alpha="0.68125550180000005" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="SXu-i2-yqj" kind="show" identifier="opponentprofile" id="9mA-ef-JYu"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gr8-K1-VzB" id="yzc-SP-CM8"/>
-                            <outlet property="delegate" destination="gr8-K1-VzB" id="inJ-dJ-HSn"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="OPPONENTS" id="1eZ-Fh-5Ft">
-                        <barButtonItem key="leftBarButtonItem" title="FIND OPPONENT" id="Tn4-h4-YH4">
-                            <connections>
-                                <segue destination="Mes-ig-gvU" kind="show" identifier="backAction" id="kyP-AH-Vkb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bA3-Su-7Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="71I-7s-zP7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="71I-7s-zP7" id="lFj-DT-WCV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yOH-cE-z8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6588.75" y="850.35211267605632"/>
+            <point key="canvasLocation" x="5625" y="851"/>
         </scene>
         <!--FIND MATCH-->
         <scene sceneID="dM8-nw-eSF">
@@ -849,24 +836,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tr-il-veA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3699.375" y="50.70422535211268"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ejv-yx-cpe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tjl-85-BtE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Fz-iU-nad">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gr8-K1-VzB" kind="relationship" relationship="rootViewController" id="FMf-Ed-CQp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpM-T4-Ols" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5591.25" y="850.35211267605632"/>
         </scene>
         <!--AUTHOR VIEW-->
         <scene sceneID="bv1-SU-mfD">
@@ -942,7 +911,7 @@ Version: 1.0
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOP-DH-GXa">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.28958413" green="0.31462949509999999" blue="0.32950475810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="672" id="r22-tD-5Nf"/>
@@ -996,8 +965,6 @@ Version: 1.0
         <image name="iphone-phone-call-icon.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9mA-ef-JYu"/>
-        <segue reference="kyP-AH-Vkb"/>
-        <segue reference="O0k-ri-GVB"/>
+        <segue reference="hyh-IQ-eao"/>
     </inferredMetricsTieBreakers>
 </document>

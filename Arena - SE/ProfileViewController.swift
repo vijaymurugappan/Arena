@@ -144,18 +144,17 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
         let chdref = ref.child(uid) //creating path for child
         chdref.observe(.value, with: {(FIRDataSnapshot) in
             if let result = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
-                self.tabBarController?.title = result[3].value as? String
-                self.userLabel.text = result[10].value as? String
-                self.fullLabel.text = result[3].value as? String
-                self.sportLabel.text = result[9].value as? String
-                self.timeLabel.text = result[6].value as? String
-                self.dayLabel.text = result[5].value as? String
-                self.badmintonLabel.text = result[1].value as? String
-                self.bowlingLabel.text = result[2].value as? String
-                self.soccerLabel.text = result[8].value as? String
-                self.contactnum = (result[4].value as? String)!
+                self.tabBarController?.title = result[4].value as? String
+                self.userLabel.text = result[11].value as? String
+                self.fullLabel.text = result[4].value as? String
+                self.sportLabel.text = result[10].value as? String
+                self.timeLabel.text = result[7].value as? String
+                self.dayLabel.text = result[6].value as? String
+                self.badmintonLabel.text = result[2].value as? String
+                self.bowlingLabel.text = result[3].value as? String
+                self.soccerLabel.text = result[9].value as? String
+                self.contactnum = (result[5].value as? String)!
             }
         })
     }
-
 }
