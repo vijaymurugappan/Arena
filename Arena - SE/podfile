@@ -20,4 +20,10 @@ target 'Arena' do
 pod 'Firebase'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
+pod ‘FacebookCore’
+pod ‘FacebookLogin’
+pod ‘FacebookShare’
+pod 'GoogleSignIn'
+pod 'Google'
+
 end
