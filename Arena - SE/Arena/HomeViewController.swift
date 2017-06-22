@@ -13,12 +13,12 @@ import FirebaseAuth //Firebase authentication for login
 import QuartzCore
 import FacebookLogin
 import FacebookCore
-import GoogleSignIn
 
-class HomeViewController: UIViewController,GIDSignInUIDelegate {
+class HomeViewController: UIViewController {
     
     //VARIABLES
     var uid = String()
+    //var credential = String()
     
     //OUTLETS
     @IBOutlet weak var loginTextField: UITextField!
@@ -47,24 +47,27 @@ class HomeViewController: UIViewController,GIDSignInUIDelegate {
         })
     }
     
+    
+    
     //Places the cursor at login text field after loading
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = LoginButton(frame: CGRect(x: 49, y: 406, width: 222, height: 30), readPermissions: [.publicProfile, .email, .userFriends])
         loginButton.layer.cornerRadius = 8.0
         view.addSubview(loginButton)
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
-        let gloginButton = GIDSignInButton(frame: CGRect(x: 49, y: 446, width: 222, height: 30))
-        gloginButton.style = .wide
-        gloginButton.layer.cornerRadius = 8.0
-        view.addSubview(gloginButton)
         setcustomTextField(textfield: loginTextField, placeholdername: "Login ID")
         setcustomTextField(textfield: passwordTextField, placeholdername: "Password")
         setcustomButton(button: loginbuttonClicked)
         setcustomButton(button: signButtonClicked)
         if let accessToken = AccessToken.current {
-            print(accessToken.appId)
+            //print(accessToken.appId)
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+            print(credential)
+            let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
+            GraphRequest(graphPath: "me", parameters: parameters, accessToken: accessToken, httpMethod: .GET, apiVersion: .defaultVersion).start {(response,result) in
+                print(response!)
+                print(result)
+            }
         }
     }
     
@@ -88,15 +91,6 @@ class HomeViewController: UIViewController,GIDSignInUIDelegate {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if error == nil {
-            //op
-        }
-        else {
-            print("\(error.localizedDescription)")
-        }
     }
     
     //Transfering the ID to different view controllers present among the tab bar controllers

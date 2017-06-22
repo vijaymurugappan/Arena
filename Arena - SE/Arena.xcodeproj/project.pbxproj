@@ -91,6 +91,7 @@
 		C4481AC51EAE6F7600AA4432 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4481AC71EAE84AD00AA4432 /* SignUpBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBasicViewController.swift; sourceTree = "<group>"; };
 		C4481AC81EAE84AD00AA4432 /* SignUpSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSportViewController.swift; sourceTree = "<group>"; };
+		C4A9A9801EE8D44100D31E1C /* Arena.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arena.entitlements; sourceTree = "<group>"; };
 		C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg"; sourceTree = "<group>"; };
 		C4BABEB61ED228FF00DD0D68 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-phone-call-icon.png"; sourceTree = "<group>"; };
@@ -228,6 +229,7 @@
 		C4481A961EAE6EE900AA4432 /* Arena */ = {
 			isa = PBXGroup;
 			children = (
+				C4A9A9801EE8D44100D31E1C /* Arena.entitlements */,
 				C44484DE1EB0B9500046F142 /* Supporting Files */,
 				C44484DB1EB0B9050046F142 /* Model */,
 				C44484DD1EB0B9400046F142 /* Views */,
@@ -333,6 +335,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = S224WD5FPF;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					C4481AA71EAE6EE900AA4432 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -711,6 +718,7 @@
 			baseConfigurationReference = DE32E17552A5281D977C575E /* Pods-Arena.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Arena/Arena.entitlements;
 				DEVELOPMENT_TEAM = S224WD5FPF;
 				INFOPLIST_FILE = Arena/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -726,6 +734,7 @@
 			baseConfigurationReference = 5B23C863A723469D2A408338 /* Pods-Arena.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Arena/Arena.entitlements;
 				DEVELOPMENT_TEAM = S224WD5FPF;
 				INFOPLIST_FILE = Arena/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;

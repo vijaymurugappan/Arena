@@ -33,6 +33,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
         locManager.requestWhenInUseAuthorization()
         mapView.showsUserLocation = true
         locManager.startUpdatingLocation()
+        mapView.userTrackingMode = .follow
         print("UID ARRAY : \(uidArray)")
         addAnnotation()
     }
@@ -96,11 +97,17 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
                 let pinLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(coordinate.latitude, coordinate.longitude)
                 //print(coordinate.latitude)
                 //print(coordinate.longitude)
+                let distLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
+                print(mapView.userLocation.coordinate)
+                let distance = (distLocation.distance(from: location))
+                print("DISTANCE \(distance)")
+                if(distance <= 2000) {
                 let objAnimation = MKPointAnnotation()
                 objAnimation.coordinate = pinLocation
                 objAnimation.title = _name
                 objAnimation.subtitle = _sport
                 self.mapView.addAnnotation(objAnimation)
+                }
             } else {
                 print("No Matching Location Found")
             }
