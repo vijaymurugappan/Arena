@@ -106,13 +106,13 @@ class FindViewController: UIViewController,UITextFieldDelegate {
                     for uidd in uidArray {
                     temp = 1
                     transferData(str: str,skl: skl,temp: temp,uidd: uidd) //if yes transfer it to a function
-                    print("exit transfer")
+                    //print("exit transfer")
                     }
                     break
                         }
                     }
                  //   self.performSegue(withIdentifier: "opponent", sender: self)
-                    print("exit loop")
+                    //print("exit loop")
                     break
                 }
                 if(str == "Soccer") { //if soccer
@@ -152,7 +152,7 @@ class FindViewController: UIViewController,UITextFieldDelegate {
                         break
                     }
                 }
-        print("exit switch")
+        //print("exit switch")
     }
     
     override func viewDidLoad() {
@@ -254,7 +254,7 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     //transferred data from the switch 1 while searches based on the skill level of the sport and that sport name specified by the user
     func transferData(str:String,skl:Int,temp:Int,uidd:String) {
         let ref = FIRDatabase.database().reference()
-            print("enter array")
+            //print("enter array")
             self.chldref = ref.child(uidd)
         chldref.observe(.value, with: {(FIRDataSnapshot)  in
             if let results = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -274,7 +274,7 @@ class FindViewController: UIViewController,UITextFieldDelegate {
                         self.chosenUID = results[11].value as! String
                         //print(self.chosenUID)
                         self.chosenUIDArray.append(self.chosenUID)
-                        print(self.chosenUIDArray)
+                        //print(self.chosenUIDArray)
                     }
                     }
                 }
@@ -313,12 +313,12 @@ class FindViewController: UIViewController,UITextFieldDelegate {
                 }
             }
             if(self.count == self.uidArray.count) {
-            print("exiting completion handler")
+            //print("exiting completion handler")
             self.performSegue(withIdentifier: "opponent", sender: self)
             }
             })
-            print("exit array")
-        print("exit fn")
+            //print("exit array")
+        //print("exit fn")
     }
     
     //TEXT FIELD DELEGATE METHODS
@@ -337,7 +337,7 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if(segue.identifier == "opponent") {
 //                let nvc2 = segue.destination as! UINavigationController
-//                let vc2 = nvc2.viewControllers[0] as! OpponentsTableViewController
+//                let vc2 = nvc2.viewControlleters[0] as! OpponentsTableViewController
                 let vc2 = segue.destination as! MapViewController
                 //print("FINAL UID ARRAY IS \(chosenUIDArray)")
                 vc2.uidArray = chosenUIDArray

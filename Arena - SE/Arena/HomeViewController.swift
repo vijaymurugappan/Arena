@@ -100,8 +100,8 @@ class HomeViewController: UIViewController {
             let nav = tabctrl.viewControllers![0] as! UINavigationController
             let vc = nav.viewControllers[0] as! ProfileViewController
             vc.uid = uid
-            let nav2 = tabctrl.viewControllers![1] as! UINavigationController
-            let vc1 = nav2.viewControllers[0] as! FindViewController
+            let nav2 = tabctrl.viewControllers![2] as! UINavigationController
+            let vc1 = nav2.viewControllers[0] as! MatchMakingViewController
             vc1.uid = uid
         }
     }

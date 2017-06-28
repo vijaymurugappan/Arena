@@ -34,7 +34,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
         mapView.showsUserLocation = true
         locManager.startUpdatingLocation()
         mapView.userTrackingMode = .follow
-        print("UID ARRAY : \(uidArray)")
+        //print("UID ARRAY : \(uidArray)")
         addAnnotation()
     }
     
@@ -98,9 +98,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
                 //print(coordinate.latitude)
                 //print(coordinate.longitude)
                 let distLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
-                print(mapView.userLocation.coordinate)
+                //print(mapView.userLocation.coordinate)
                 let distance = (distLocation.distance(from: location))
-                print("DISTANCE \(distance)")
+                //print("DISTANCE \(distance)")
                 if(distance <= 2000) {
                 let objAnimation = MKPointAnnotation()
                 objAnimation.coordinate = pinLocation

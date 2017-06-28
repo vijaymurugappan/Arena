@@ -14,6 +14,10 @@
 		C43EAA4D1EAEEB83004AD37E /* arena.gif in Resources */ = {isa = PBXBuildFile; fileRef = C43EAA4C1EAEEB83004AD37E /* arena.gif */; };
 		C43EAA4F1EAF03E1004AD37E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EAA4E1EAF03E1004AD37E /* ProfileViewController.swift */; };
 		C43EAA511EAF041C004AD37E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43EAA501EAF041C004AD37E /* User.swift */; };
+		C443D8D71EFDD0E000535F4D /* HCSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C443D8D61EFDD0E000535F4D /* HCSStarRatingView.m */; };
+		C443D8D91EFDDF0100535F4D /* ico-find.png in Resources */ = {isa = PBXBuildFile; fileRef = C443D8D81EFDDF0100535F4D /* ico-find.png */; };
+		C443D8DB1F01F0EA00535F4D /* MatchMakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443D8DA1F01F0EA00535F4D /* MatchMakingViewController.swift */; };
+		C443D8DD1F01F11A00535F4D /* FindPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443D8DC1F01F11A00535F4D /* FindPlaceViewController.swift */; };
 		C44484C81EB020770046F142 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44484C71EB020770046F142 /* FindViewController.swift */; };
 		C44484CE1EB0B32D0046F142 /* featured-content-messages-icon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C44484CC1EB0B32D0046F142 /* featured-content-messages-icon_2x.png */; };
 		C44484D01EB0B39E0046F142 /* ios7_phone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C44484CF1EB0B39E0046F142 /* ios7_phone_icon.png */; };
@@ -32,6 +36,7 @@
 		C4481AC61EAE6F7600AA4432 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4481AC51EAE6F7600AA4432 /* GoogleService-Info.plist */; };
 		C4481AC91EAE84AD00AA4432 /* SignUpBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4481AC71EAE84AD00AA4432 /* SignUpBasicViewController.swift */; };
 		C4481ACA1EAE84AD00AA4432 /* SignUpSportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4481AC81EAE84AD00AA4432 /* SignUpSportViewController.swift */; };
+		C46C749E1EFC7CA900792FF3 /* PlaceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C749D1EFC7CA900792FF3 /* PlaceMapViewController.swift */; };
 		C4BABEB31ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */; };
 		C4BABEB71ED228FF00DD0D68 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4BABEB61ED228FF00DD0D68 /* 1.jpg */; };
 		C4EE16311ED4D67F0076CF8B /* iphone-phone-call-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */; };
@@ -67,6 +72,12 @@
 		C43EAA4C1EAEEB83004AD37E /* arena.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = arena.gif; sourceTree = "<group>"; };
 		C43EAA4E1EAF03E1004AD37E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		C43EAA501EAF041C004AD37E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C443D8D41EFDD0E000535F4D /* Arena-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Arena-Bridging-Header.h"; sourceTree = "<group>"; };
+		C443D8D51EFDD0E000535F4D /* HCSStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSStarRatingView.h; sourceTree = "<group>"; };
+		C443D8D61EFDD0E000535F4D /* HCSStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSStarRatingView.m; sourceTree = "<group>"; };
+		C443D8D81EFDDF0100535F4D /* ico-find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-find.png"; sourceTree = "<group>"; };
+		C443D8DA1F01F0EA00535F4D /* MatchMakingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchMakingViewController.swift; sourceTree = "<group>"; };
+		C443D8DC1F01F11A00535F4D /* FindPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPlaceViewController.swift; sourceTree = "<group>"; };
 		C44484C71EB020770046F142 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		C44484CC1EB0B32D0046F142 /* featured-content-messages-icon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "featured-content-messages-icon_2x.png"; sourceTree = "<group>"; };
 		C44484CF1EB0B39E0046F142 /* ios7_phone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios7_phone_icon.png; sourceTree = "<group>"; };
@@ -91,6 +102,7 @@
 		C4481AC51EAE6F7600AA4432 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4481AC71EAE84AD00AA4432 /* SignUpBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBasicViewController.swift; sourceTree = "<group>"; };
 		C4481AC81EAE84AD00AA4432 /* SignUpSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSportViewController.swift; sourceTree = "<group>"; };
+		C46C749D1EFC7CA900792FF3 /* PlaceMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMapViewController.swift; sourceTree = "<group>"; };
 		C4A9A9801EE8D44100D31E1C /* Arena.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arena.entitlements; sourceTree = "<group>"; };
 		C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg"; sourceTree = "<group>"; };
 		C4BABEB61ED228FF00DD0D68 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -171,6 +183,9 @@
 				C44484D31EB0B8C10046F142 /* AboutViewController.swift */,
 				C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */,
 				C413D8021ED627C3005DF69D /* MapViewController.swift */,
+				C46C749D1EFC7CA900792FF3 /* PlaceMapViewController.swift */,
+				C443D8DA1F01F0EA00535F4D /* MatchMakingViewController.swift */,
+				C443D8DC1F01F11A00535F4D /* FindPlaceViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,12 +202,16 @@
 		C44484DE1EB0B9500046F142 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C443D8D51EFDD0E000535F4D /* HCSStarRatingView.h */,
+				C443D8D61EFDD0E000535F4D /* HCSStarRatingView.m */,
+				C443D8D41EFDD0E000535F4D /* Arena-Bridging-Header.h */,
 				C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */,
 				C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */,
 				C44484CF1EB0B39E0046F142 /* ios7_phone_icon.png */,
 				C4BABEB61ED228FF00DD0D68 /* 1.jpg */,
 				C44484CC1EB0B32D0046F142 /* featured-content-messages-icon_2x.png */,
 				C44484D11EB0B4060046F142 /* 2.png */,
+				C443D8D81EFDDF0100535F4D /* ico-find.png */,
 				C44484D51EB0B8E50046F142 /* index.html */,
 				C44484D61EB0B8E50046F142 /* images */,
 				C44484D71EB0B8E50046F142 /* css */,
@@ -334,6 +353,7 @@
 					C4481A931EAE6EE900AA4432 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = S224WD5FPF;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -385,6 +405,7 @@
 				C4481AA21EAE6EE900AA4432 /* LaunchScreen.storyboard in Resources */,
 				C44484D01EB0B39E0046F142 /* ios7_phone_icon.png in Resources */,
 				C44484D21EB0B4060046F142 /* 2.png in Resources */,
+				C443D8D91EFDDF0100535F4D /* ico-find.png in Resources */,
 				C44484D81EB0B8E50046F142 /* index.html in Resources */,
 				C4EE16311ED4D67F0076CF8B /* iphone-phone-call-icon.png in Resources */,
 				C43EAA4D1EAEEB83004AD37E /* arena.gif in Resources */,
@@ -559,12 +580,16 @@
 				C413D8031ED627C3005DF69D /* MapViewController.swift in Sources */,
 				C4481A9A1EAE6EE900AA4432 /* HomeViewController.swift in Sources */,
 				C4EE16351ED4E1880076CF8B /* AuthorViewController.swift in Sources */,
+				C443D8DB1F01F0EA00535F4D /* MatchMakingViewController.swift in Sources */,
 				C4481A981EAE6EE900AA4432 /* AppDelegate.swift in Sources */,
 				C44484D41EB0B8C10046F142 /* AboutViewController.swift in Sources */,
 				C43EAA511EAF041C004AD37E /* User.swift in Sources */,
 				C43EAA4F1EAF03E1004AD37E /* ProfileViewController.swift in Sources */,
 				C4481AC91EAE84AD00AA4432 /* SignUpBasicViewController.swift in Sources */,
+				C443D8DD1F01F11A00535F4D /* FindPlaceViewController.swift in Sources */,
 				C44484C81EB020770046F142 /* FindViewController.swift in Sources */,
+				C46C749E1EFC7CA900792FF3 /* PlaceMapViewController.swift in Sources */,
+				C443D8D71EFDD0E000535F4D /* HCSStarRatingView.m in Sources */,
 				C4481ACA1EAE84AD00AA4432 /* SignUpSportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,6 +743,7 @@
 			baseConfigurationReference = DE32E17552A5281D977C575E /* Pods-Arena.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Arena/Arena.entitlements;
 				DEVELOPMENT_TEAM = S224WD5FPF;
 				INFOPLIST_FILE = Arena/Info.plist;
@@ -725,6 +751,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.niu.cs.Arena;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arena/Arena-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -734,6 +762,7 @@
 			baseConfigurationReference = 5B23C863A723469D2A408338 /* Pods-Arena.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Arena/Arena.entitlements;
 				DEVELOPMENT_TEAM = S224WD5FPF;
 				INFOPLIST_FILE = Arena/Info.plist;
@@ -741,6 +770,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.niu.cs.Arena;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arena/Arena-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
