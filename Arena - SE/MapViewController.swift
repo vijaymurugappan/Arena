@@ -46,11 +46,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
 //    }
     
     func addAnnotation() {
-        let ref = FIRDatabase.database().reference() //creating root referenence
+        let ref = Database.database().reference() //creating root referenence
         for uid in uidArray {
         let chdref = ref.child(uid) //creating path for child
         chdref.observe(.value, with: {(FIRDataSnapshot) in
-            if let result = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let result = FIRDataSnapshot.children.allObjects as? [DataSnapshot] {
                 self.counter += 1
                 self.name.append((result[4].value as? String)!)
                 self.sport.append((result[10].value as? String)!)

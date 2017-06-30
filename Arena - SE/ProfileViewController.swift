@@ -140,10 +140,10 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate,UI
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        let ref = FIRDatabase.database().reference() //creating root referenence
+        let ref = Database.database().reference() //creating root referenence
         let chdref = ref.child(uid) //creating path for child
         chdref.observe(.value, with: {(FIRDataSnapshot) in
-            if let result = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let result = FIRDataSnapshot.children.allObjects as? [DataSnapshot] {
                 self.tabBarController?.title = result[4].value as? String
                 self.userLabel.text = result[11].value as? String
                 self.fullLabel.text = result[4].value as? String

@@ -27,9 +27,7 @@ class PlaceMapViewController: UIViewController,MKMapViewDelegate,CLLocationManag
         locManager.requestWhenInUseAuthorization()
         mapView.showsUserLocation = true
         locManager.startUpdatingLocation()
-        //mapView.userTrackingMode = .follow
-        //let star: HCSStarRatingView = HCSStarRatingView()
-        //let game = "volleyball"
+        mapView.userTrackingMode = .follow
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.785834,-122.406417&rating=\(rating)&radius=\(radius)&type=recreation&keyword=\(game)&key=AIzaSyBH2jfN-bWe0LIBaPfKEbc_WeGF8oez6X8")
         let request = URLRequest(url: url!)
         let dataTask = URLSession.shared.dataTask(with: request) {

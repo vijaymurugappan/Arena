@@ -12,7 +12,7 @@ import FirebaseAuth
 class SignUpSportViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     
 //FIREBASE REFERENCES
-let rootref = FIRDatabase.database().reference()
+let rootref = Database.database().reference()
     
 //VARIABLES
     let pickerData = Calendar.current.weekdaySymbols
@@ -46,7 +46,7 @@ let rootref = FIRDatabase.database().reference()
         self.users.append(User(name: self.name, age: self.age, sex: self.sex, contact: self.number, username: self.username, password: self.password, sports: self.sportTextField.text!, day: self.dayTextField.text!, time: self.timeTextField.text!, bowling: self.bowlingSkill.text!, badminton: self.badmintonSkill.text!, soccer: self.soccerSkill.text!))
         for item in users  {
             //New user creating using firebase clouse database with username and password
-        FIRAuth.auth()?.createUser(withEmail: item.Username, password: item.Password, completion: { (user, error) in
+        Auth.auth().createUser(withEmail: item.Username, password: item.Password, completion: { (user, error) in
             if(error == nil)
             { //From the user object extracting the files and storing it in the database
                 let descref = self.rootref.child((user?.uid)!)

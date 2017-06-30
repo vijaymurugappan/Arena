@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     @IBAction func loginClicked(_ sender: UIButton) {
         //Block which authenticates the user with the provided email and password if exists in the google cloud database
         let loginID = loginTextField.text! + domainLabel.text!
-        FIRAuth.auth()?.signIn(withEmail: loginID, password: passwordTextField.text!, completion: { (user, error) in
+        Auth.auth().signIn(withEmail: loginID, password: passwordTextField.text!, completion: { (user, error) in
             if error == nil {
                 self.loginbuttonClicked.setTitle("Logged In", for: .normal)
                 self.uid = (user?.uid)! //Unique user ID
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
         setcustomButton(button: signButtonClicked)
         if let accessToken = AccessToken.current {
             //print(accessToken.appId)
-            let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
             print(credential)
             let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
             GraphRequest(graphPath: "me", parameters: parameters, accessToken: accessToken, httpMethod: .GET, apiVersion: .defaultVersion).start {(response,result) in

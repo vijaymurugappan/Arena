@@ -39,6 +39,9 @@
 		C46C749E1EFC7CA900792FF3 /* PlaceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C749D1EFC7CA900792FF3 /* PlaceMapViewController.swift */; };
 		C4BABEB31ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */; };
 		C4BABEB71ED228FF00DD0D68 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4BABEB61ED228FF00DD0D68 /* 1.jpg */; };
+		C4DC4E4D1F0468110056A3BA /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC4E4C1F0468110056A3BA /* PlaceDetailViewController.swift */; };
+		C4DC4E4F1F04682E0056A3BA /* FindDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC4E4E1F04682E0056A3BA /* FindDetailViewController.swift */; };
+		C4DC4E721F05ADC60056A3BA /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DC4E711F05ADC60056A3BA /* CustomCalendarCell.swift */; };
 		C4EE16311ED4D67F0076CF8B /* iphone-phone-call-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */; };
 		C4EE16351ED4E1880076CF8B /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +109,9 @@
 		C4A9A9801EE8D44100D31E1C /* Arena.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arena.entitlements; sourceTree = "<group>"; };
 		C4BABEB21ED21E0700DD0D68 /* backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backgrounds-desktop-wallpaper-venues-architecture-images-sports.jpg"; sourceTree = "<group>"; };
 		C4BABEB61ED228FF00DD0D68 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		C4DC4E4C1F0468110056A3BA /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		C4DC4E4E1F04682E0056A3BA /* FindDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDetailViewController.swift; sourceTree = "<group>"; };
+		C4DC4E711F05ADC60056A3BA /* CustomCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalendarCell.swift; sourceTree = "<group>"; };
 		C4EE16301ED4D67F0076CF8B /* iphone-phone-call-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-phone-call-icon.png"; sourceTree = "<group>"; };
 		C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		DE32E17552A5281D977C575E /* Pods-Arena.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arena.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arena/Pods-Arena.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,13 +185,16 @@
 				C4481AC71EAE84AD00AA4432 /* SignUpBasicViewController.swift */,
 				C4481AC81EAE84AD00AA4432 /* SignUpSportViewController.swift */,
 				C43EAA4E1EAF03E1004AD37E /* ProfileViewController.swift */,
+				C443D8DA1F01F0EA00535F4D /* MatchMakingViewController.swift */,
 				C44484C71EB020770046F142 /* FindViewController.swift */,
+				C413D8021ED627C3005DF69D /* MapViewController.swift */,
+				C4DC4E4E1F04682E0056A3BA /* FindDetailViewController.swift */,
+				C443D8DC1F01F11A00535F4D /* FindPlaceViewController.swift */,
+				C46C749D1EFC7CA900792FF3 /* PlaceMapViewController.swift */,
+				C4DC4E4C1F0468110056A3BA /* PlaceDetailViewController.swift */,
 				C44484D31EB0B8C10046F142 /* AboutViewController.swift */,
 				C4EE16341ED4E1880076CF8B /* AuthorViewController.swift */,
-				C413D8021ED627C3005DF69D /* MapViewController.swift */,
-				C46C749D1EFC7CA900792FF3 /* PlaceMapViewController.swift */,
-				C443D8DA1F01F0EA00535F4D /* MatchMakingViewController.swift */,
-				C443D8DC1F01F11A00535F4D /* FindPlaceViewController.swift */,
+				C4DC4E711F05ADC60056A3BA /* CustomCalendarCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -583,12 +592,15 @@
 				C443D8DB1F01F0EA00535F4D /* MatchMakingViewController.swift in Sources */,
 				C4481A981EAE6EE900AA4432 /* AppDelegate.swift in Sources */,
 				C44484D41EB0B8C10046F142 /* AboutViewController.swift in Sources */,
+				C4DC4E721F05ADC60056A3BA /* CustomCalendarCell.swift in Sources */,
 				C43EAA511EAF041C004AD37E /* User.swift in Sources */,
 				C43EAA4F1EAF03E1004AD37E /* ProfileViewController.swift in Sources */,
 				C4481AC91EAE84AD00AA4432 /* SignUpBasicViewController.swift in Sources */,
 				C443D8DD1F01F11A00535F4D /* FindPlaceViewController.swift in Sources */,
 				C44484C81EB020770046F142 /* FindViewController.swift in Sources */,
 				C46C749E1EFC7CA900792FF3 /* PlaceMapViewController.swift in Sources */,
+				C4DC4E4F1F04682E0056A3BA /* FindDetailViewController.swift in Sources */,
+				C4DC4E4D1F0468110056A3BA /* PlaceDetailViewController.swift in Sources */,
 				C443D8D71EFDD0E000535F4D /* HCSStarRatingView.m in Sources */,
 				C4481ACA1EAE84AD00AA4432 /* SignUpSportViewController.swift in Sources */,
 			);

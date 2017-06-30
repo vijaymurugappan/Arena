@@ -34,7 +34,7 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     var socskillArray = [Int]()
     var sportArray = [String]()
     var chosenUIDArray = [String]()
-    var chldref = FIRDatabaseReference()
+    var chldref = DatabaseReference()
     var count = Int()
     
     //OUTLETS
@@ -183,9 +183,9 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     }
     
     func fetchKey() {
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
         ref.observe(.value, with: {(snapshot) in
-            if let res = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let res = snapshot.children.allObjects as? [DataSnapshot] {
                 let counter = res.count
                 for i in 0...(counter-1) { // from 0 to count-1
                 self.uidArray.append(res[i].key) //appending keys to the array
@@ -196,11 +196,11 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     }
     //this function retreives the user data using the key values
     func fetchData() {
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
         for uidd in uidArray { //looping the key values
             let chldref = ref.child(uidd)
         chldref.observe(.value, with: {(FIRDataSnapshot) in //retreiving files from the database
-            if let results = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let results = FIRDataSnapshot.children.allObjects as? [DataSnapshot] {
                 self.strage = results[1].value as! String
                 self.age = Int(self.strage)!
                 self.ageArray.append(self.age)
@@ -226,11 +226,11 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     }
     //transferred data function from the switch 2 which searches based on the age and sex specified by the user
     func transferData1(str:String,a:Int) {
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
         for uidd in uidArray {
             let chldref = ref.child(uidd)
         chldref.observe(.value, with: {(FIRDataSnapshot) in
-            if let results = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let results = FIRDataSnapshot.children.allObjects as? [DataSnapshot] {
                 self.pid = results[11].value as! String
                 if(self.pid == self.uid)
                 {
@@ -253,11 +253,11 @@ class FindViewController: UIViewController,UITextFieldDelegate {
     
     //transferred data from the switch 1 while searches based on the skill level of the sport and that sport name specified by the user
     func transferData(str:String,skl:Int,temp:Int,uidd:String) {
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             //print("enter array")
             self.chldref = ref.child(uidd)
         chldref.observe(.value, with: {(FIRDataSnapshot)  in
-            if let results = FIRDataSnapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let results = FIRDataSnapshot.children.allObjects as? [DataSnapshot] {
                 self.count += 1
                 if(temp == 1) { // reference number passed to identify the sport and skill
                     self.pid = results[11].value as! String
